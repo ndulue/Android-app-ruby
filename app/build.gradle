@@ -46,7 +46,7 @@ dependencies {
     implementation 'com.squareup.retrofit2:adapter-rxjava2:2.5.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.5.0'
     implementation 'io.reactivex.rxjava2:rxandroid:2.1.0'
-    implementation 'io.reactivex.rxjava2:rxjava:2.2.2'
+    implementation 'io.reactivex.rxjava2:rxjava:2.2.9'
 
     //SpotsDialog
     implementation 'com.github.d-max:spots-dialog:1.1@aar'
@@ -63,12 +63,23 @@ dependencies {
     //Notification
     implementation 'com.nex3z:notification-badge:1.0.2'
 
-    //Room RxJava
-    annotationProcessor 'androidx.room:room-compiler:2.2.3'
-    //implementation 'androidx.room.room-rxjava2:2.1.0-beta01'
-    implementation 'android.arch.persistence.room:runtime:1.1.1'
-    annotationProcessor 'android.arch.persistence.room:compiler:1.1.1'
+    //ExpansionPanel
     implementation 'com.github.florent37:expansionpanel:1.2.2'
+
+    //Room RxJava
+    //implementation 'android.arch.persistence.room:runtime:1.1.1'
+    //annotationProcessor 'android.arch.persistence.room:compiler:1.1.1'
+
+
+    implementation "androidx.room:room-runtime:2.2.5"
+    annotationProcessor "androidx.room:room-compiler:2.2.5"
+    // optional - RxJava support for Room
+    implementation "androidx.room:room-rxjava2:2.2.5"
+    // optional - Guava support for Room, including Optional and ListenableFuture
+    implementation "androidx.room:room-guava:2.2.5"
+
+    // Test helpers
+    testImplementation "androidx.room:room-testing:2.2.5"
 
     //Date calendar
     implementation 'com.wdullaer:materialdatetimepicker:4.2.0'

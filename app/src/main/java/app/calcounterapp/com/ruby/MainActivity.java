@@ -123,24 +123,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         compositeDisposable.add(myRubyAPI.getProduct(Common.API_KEY)
         .subscribeOn(Schedulers.io())
         .observeOn(AndroidSchedulers.mainThread())
-        .subscribe(new Consumer<ProductModel>() {
-            @Override
-            public void accept(ProductModel productModel) throws Exception {
-                if (productModel.isSuccess()){
+        .subscribe(productModel -> {
 
-                    EventBus.getDefault().post(new ProductLoadEvent(true, productModel.getProducts()));
+                EventBus.getDefault().post(new ProductLoadEvent(true, productModel.getProducts()));
 
-                }else{
-
-                }
-            }
-        }, new Consumer<Throwable>() {
-            @Override
-            public void accept(Throwable throwable) throws Exception {
-                EventBus.getDefault().post(new ProductLoadEvent(false, throwable.getMessage()));
-
-            }
-        }));
+        }, throwable -> EventBus.getDefault().post(new ProductLoadEvent(false, throwable.getMessage()))));
     }
 
     private void initView() {
@@ -221,7 +208,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         super.onStop();
         EventBus.getDefault().unregister(this);
     }
-
+    //listen to eventbus
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void getProductEvent(ProductLoadEvent event){
         if (event.isSuccess()){

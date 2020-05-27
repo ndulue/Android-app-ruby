@@ -84,8 +84,6 @@
                 android:orientation="vertical">
 
                 <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
                     android:layout_marginBottom="30sp"
                     android:layout_gravity="center_horizontal"
                     android:src="@mipmap/ic_launcher"/>
@@ -150,7 +148,6 @@
                     android:textStyle="bold"
                     android:layout_margin="20dp"
                     android:background="@drawable/login_button_background"
-                    android:shadowRadius="20dp"
                     android:id="@+id/register"
                     android:text="Register"/>
 

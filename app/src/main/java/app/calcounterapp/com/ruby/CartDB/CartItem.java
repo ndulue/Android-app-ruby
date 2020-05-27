@@ -7,7 +7,6 @@ import io.reactivex.annotations.NonNull;
 
 @Entity(tableName = "Cart")
 public class CartItem {
-
     @PrimaryKey
     @NonNull
     @ColumnInfo(name = "id")
@@ -94,11 +93,12 @@ public class CartItem {
         this.manufacturer = manufacturer;
     }
 
-    public String getEmail() {
+    public String getUseremail() {
         return useremail;
     }
 
-    public void setEmail(String email) {
-        this.useremail = email;
+    public void setUseremail(String useremail) {
+        this.useremail = useremail;
     }
+
 }

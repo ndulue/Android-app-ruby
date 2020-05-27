@@ -2,7 +2,7 @@ package app.calcounterapp.com.ruby.CartDB;
 
 import java.util.List;
 
-
+import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.OnConflictStrategy;
@@ -12,6 +12,7 @@ import io.reactivex.Completable;
 import io.reactivex.Flowable;
 import io.reactivex.Single;
 
+@Dao
 public interface CartDAO {
 
     @Query("SELECT * FROM Cart WHERE useremail=:useremail")

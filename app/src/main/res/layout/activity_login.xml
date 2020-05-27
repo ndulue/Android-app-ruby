@@ -132,7 +132,6 @@
                     android:layout_margin="20dp"
                     android:id="@+id/login"
                     android:background="@drawable/login_button_background"
-                    android:shadowRadius="20dp"
                     android:text="Login"/>
 
             </LinearLayout>

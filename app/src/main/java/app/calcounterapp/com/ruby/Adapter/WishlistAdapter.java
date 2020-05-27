@@ -87,7 +87,7 @@ public class WishlistAdapter extends RecyclerView.Adapter<WishlistAdapter.MyView
 
                 }else if (isAddtoCart){
                     CartItem cartItem = new CartItem();
-                    cartItem.setEmail(Common.currentUser.getEmail());
+                    cartItem.setUseremail(Common.currentUser.getEmail());
                     cartItem.setImage(favouriteList.get(position).getImage());
                     cartItem.setManufacturer(favouriteList.get(position).getManufacturer());
                     cartItem.setPrice(favouriteList.get(position).getPrice());

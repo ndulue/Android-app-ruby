@@ -179,7 +179,7 @@ public class ProductDetailsActivity extends AppCompatActivity {
     private void handleCart() {
 
         CartItem cartItem = new CartItem();
-        cartItem.setEmail(Common.currentUser.getEmail());
+        cartItem.setUseremail(Common.currentUser.getEmail());
         cartItem.setImage(selectedImage);
         cartItem.setManufacturer(selectedManufacturer);
         cartItem.setPrice(selectedPrice);
